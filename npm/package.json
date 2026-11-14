@@ -1,0 +1,29 @@
+{
+  "name": "ethicsportal",
+  "version": "0.1.0",
+  "description": "Connect an AI assistant to EthicsPortal, whistleblower software for EU organisations",
+  "bin": {
+    "ethicsportal": "index.js"
+  },
+  "files": [
+    "index.js"
+  ],
+  "homepage": "https://ethicsportal.eu/ai-assistant/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ethicsportal/plugins.git",
+    "directory": "npm"
+  },
+  "bugs": "mailto:support@ethicsportal.eu",
+  "license": "MIT",
+  "keywords": [
+    "ethicsportal",
+    "whistleblowing",
+    "whistleblower",
+    "compliance",
+    "mcp"
+  ],
+  "engines": {
+    "node": ">=18"
+  }
+}
