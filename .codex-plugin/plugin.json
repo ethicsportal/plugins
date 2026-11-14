@@ -1,6 +1,6 @@
 {
   "name": "ethicsportal",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Whistleblower software for EU organisations under Directive 2019/1937. Set up the whistleblowing channel, invite case handlers, and read report status and deadlines. Report content is never available to the assistant.",
   "author": {
     "name": "EthicsPortal",

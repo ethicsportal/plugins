@@ -1,6 +1,6 @@
 ---
 name: whistleblower-compliance-lookup
-description: Look up EU Whistleblower Directive 2019/1937 compliance requirements for each EU member state — transposition dates, organization-size thresholds, protected reporter categories, reporting channel obligations, and penalty schedules.
+description: Look up EU Whistleblower Directive 2019/1937 compliance requirements for each EU member state — transposition dates, organization-size thresholds, protected reporter categories, whistleblowing channel obligations, and penalty schedules.
 ---
 
 # EU Whistleblower Compliance Lookup
@@ -12,7 +12,7 @@ EthicsPortal publishes a reference directory of how EU Directive 2019/1937 (the 
 - Country-specific transposition laws and effective dates
 - Organization-size thresholds triggering reporting-channel obligations
 - Protected reporter categories (employees, contractors, shareholders, etc.)
-- Internal reporting channel requirements (timelines, acknowledgement, follow-up)
+- Whistleblowing channel requirements under Articles 8 and 9 (timelines, acknowledgement, follow-up)
 - Penalty schedules for non-compliance
 - Comparison across providers for compliant reporting platforms
 
@@ -36,4 +36,4 @@ Additional references:
 
 ## Scope
 
-Reference information only. The skill does not file reports, create cases, or authenticate users. For operational reporting, the protected reporting channel is deployed per-organization at `https://secure.ethicsportal.eu`.
+Reference information only. The skill does not file reports, create cases, or authenticate users. Each organisation's whistleblowing channel runs at `https://secure.ethicsportal.eu`.
