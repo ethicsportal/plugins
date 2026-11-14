@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Copy the skills that ethicsportal.eu publishes into the Claude Code plugin.
+"""Copy the skills that ethicsportal.eu publishes into skills/.
 
-    bin/sync-skills            update plugins/ethicsportal/skills
+    bin/sync-skills            update skills/ and bump the plugin version if anything changed
     bin/sync-skills --check    exit 1 if the copies differ from the published skills
 
 The website is the source. Edit a skill there, then run this.
@@ -15,7 +15,10 @@ import urllib.parse
 import urllib.request
 
 INDEX = "https://ethicsportal.eu/.well-known/agent-skills/index.json"
-SKILLS = pathlib.Path(__file__).resolve().parent.parent / "plugins" / "ethicsportal" / "skills"
+ROOT = pathlib.Path(__file__).resolve().parent.parent
+SKILLS = ROOT / "skills"
+# Claude Code and Cursor keep an install on its version until the version changes.
+MANIFESTS = [ROOT / ".claude-plugin/plugin.json", ROOT / ".cursor-plugin/plugin.json", ROOT / ".codex-plugin/plugin.json"]
 
 
 def fetch(url):
@@ -34,15 +37,24 @@ def published():
     return skills
 
 
+def bump_patch_version():
+    for path in MANIFESTS:
+        manifest = json.loads(path.read_text())
+        major, minor, patch = manifest["version"].split(".")
+        manifest["version"] = f"{major}.{minor}.{int(patch) + 1}"
+        path.write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n")
+
+
 def main():
-    check = "--check" in sys.argv[1:]
     skills = published()
     local = {path.parent.name: path.read_bytes() for path in SKILLS.glob("*/SKILL.md")}
+    changed = sorted(name for name in skills.keys() | local.keys() if skills.get(name) != local.get(name))
 
-    if check:
-        stale = sorted(name for name in skills.keys() | local.keys() if skills.get(name) != local.get(name))
-        if stale:
-            sys.exit("Out of date: " + ", ".join(stale) + ". Run bin/sync-skills.")
+    if "--check" in sys.argv[1:]:
+        if changed:
+            sys.exit("Out of date: " + ", ".join(changed) + ". Run bin/sync-skills.")
+        return
+    if not changed:
         return
 
     for name in local.keys() - skills.keys():
@@ -50,6 +62,8 @@ def main():
     for name, body in skills.items():
         (SKILLS / name).mkdir(parents=True, exist_ok=True)
         (SKILLS / name / "SKILL.md").write_bytes(body)
+    bump_patch_version()
+    print("Updated: " + ", ".join(changed))
 
 
 if __name__ == "__main__":

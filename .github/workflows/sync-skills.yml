@@ -1,0 +1,23 @@
+name: Sync skills
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - run: bin/sync-skills
+      - run: |
+          git diff --quiet && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- skills .claude-plugin/plugin.json .cursor-plugin/plugin.json .codex-plugin/plugin.json
+          git commit -m "Sync skills from ethicsportal.eu"
+          git push

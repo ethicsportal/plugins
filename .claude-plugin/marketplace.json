@@ -10,7 +10,7 @@
     {
       "name": "ethicsportal",
       "description": "Whistleblower software for EU organisations under Directive 2019/1937. Set up the whistleblowing channel, and read report status and deadlines, through the EthicsPortal MCP server.",
-      "source": "./plugins/ethicsportal",
+      "source": "./",
       "category": "productivity"
     }
   ]

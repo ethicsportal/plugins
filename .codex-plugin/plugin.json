@@ -1,0 +1,43 @@
+{
+  "name": "ethicsportal",
+  "version": "1.1.0",
+  "description": "Whistleblower software for EU organisations under Directive 2019/1937. Set up the whistleblowing channel, invite case handlers, and read report status and deadlines. Report content is never available to the assistant.",
+  "author": {
+    "name": "EthicsPortal",
+    "email": "support@ethicsportal.eu",
+    "url": "https://ethicsportal.eu"
+  },
+  "homepage": "https://ethicsportal.eu/ai-assistant/",
+  "repository": "https://github.com/ethicsportal/plugins",
+  "license": "MIT",
+  "keywords": [
+    "ethicsportal",
+    "whistleblowing",
+    "whistleblower",
+    "compliance",
+    "EU Directive 2019/1937"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./codex-mcp.json",
+  "interface": {
+    "displayName": "EthicsPortal",
+    "shortDescription": "Whistleblower software for EU organisations",
+    "longDescription": "Set up the whistleblowing channel under EU Directive 2019/1937, invite case handlers, and read report status and deadlines from Codex. Report content is never available to the assistant.",
+    "developerName": "EthicsPortal",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://ethicsportal.eu",
+    "privacyPolicyURL": "https://ethicsportal.eu/privacy/",
+    "termsOfServiceURL": "https://ethicsportal.eu/terms/",
+    "defaultPrompt": [
+      "Set up a whistleblowing channel for my organisation",
+      "Which reports are close to a deadline?",
+      "Invite a case handler"
+    ],
+    "brandColor": "#004494",
+    "logo": "./assets/logo.png"
+  }
+}

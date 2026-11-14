@@ -1,7 +1,10 @@
 {
   "name": "ethicsportal",
   "displayName": "EthicsPortal",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "minClientVersions": {
+    "cursor": "3.13.0"
+  },
   "description": "Whistleblower software for EU organisations under Directive 2019/1937. Set up the whistleblowing channel, and read report status and deadlines.",
   "author": {
     "name": "EthicsPortal",
@@ -24,5 +27,6 @@
     "compliance",
     "mcp"
   ],
+  "skills": "./skills/",
   "mcpServers": "./mcp.json"
 }
