@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "ethicsportal": {
+      "type": "http",
+      "url": "https://secure.ethicsportal.eu/mcp"
+    }
+  }
+}

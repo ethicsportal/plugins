@@ -1,0 +1,28 @@
+{
+  "name": "ethicsportal",
+  "displayName": "EthicsPortal",
+  "version": "1.0.0",
+  "description": "Whistleblower software for EU organisations under Directive 2019/1937. Set up the whistleblowing channel, and read report status and deadlines.",
+  "author": {
+    "name": "EthicsPortal",
+    "email": "support@ethicsportal.eu"
+  },
+  "homepage": "https://ethicsportal.eu/ai-assistant/",
+  "repository": "https://github.com/ethicsportal/plugins",
+  "license": "MIT",
+  "logo": "assets/logo.png",
+  "keywords": [
+    "ethicsportal",
+    "whistleblowing",
+    "whistleblower",
+    "compliance",
+    "mcp"
+  ],
+  "category": "integrations",
+  "tags": [
+    "whistleblowing",
+    "compliance",
+    "mcp"
+  ],
+  "mcpServers": "./mcp.json"
+}
