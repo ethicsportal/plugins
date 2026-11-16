@@ -17,8 +17,13 @@ import urllib.request
 INDEX = "https://ethicsportal.eu/.well-known/agent-skills/index.json"
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SKILLS = ROOT / "skills"
-# Claude Code and Cursor keep an install on its version until the version changes.
-MANIFESTS = [ROOT / ".claude-plugin/plugin.json", ROOT / ".cursor-plugin/plugin.json", ROOT / ".codex-plugin/plugin.json"]
+# Clients keep an install on its version until the version changes.
+MANIFESTS = [
+    ROOT / ".claude-plugin/plugin.json",
+    ROOT / ".cursor-plugin/plugin.json",
+    ROOT / ".codex-plugin/plugin.json",
+    ROOT / "gemini-extension.json",
+]
 
 
 def fetch(url):

@@ -33,6 +33,14 @@ ln -s ~/ethicsportal-plugins ~/.cursor/plugins/local/ethicsportal
 
 On a Cursor Teams plan, an admin can instead use **Import from Repo** with `https://github.com/ethicsportal/plugins`.
 
+## Gemini CLI
+
+```sh
+gemini extensions install https://github.com/ethicsportal/plugins
+```
+
+Then run `/mcp auth ethicsportal` in Gemini CLI. You sign in, or create an account, in the browser.
+
 ## Other assistants
 
 Install the skills with:
